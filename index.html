@@ -42,17 +42,15 @@
       --serif: "Ovo", "Palatino Linotype", Georgia, serif;
     }
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-snap-type: y proximity; background: #0b0b18; }
+    html { scroll-behavior: smooth; background: #0b0b18; }
     body { margin: 0; font-family: var(--serif); -webkit-font-smoothing: antialiased; }
     p, h1, h2, ul { margin: 0; padding: 0; }
     ul { list-style: none; }
     .story { width: min(100%, 56.25svh); min-width: min(100%, 320px); margin: 0 auto; container-type: inline-size; box-shadow: 0 0 80px #000a; }
 
     /* --u scales type with the card, so every phone gets the same composition */
-    .card { --u: min(1cqw, .47svh); position: relative; min-height: 100svh; overflow: hidden; isolation: isolate; scroll-snap-align: start; display: flex; flex-direction: column; text-align: center; }
+    .card { --u: min(1cqw, .47svh); position: relative; min-height: 100svh; overflow: hidden; isolation: isolate; display: flex; flex-direction: column; text-align: center; }
     .card::before { content: ""; position: absolute; z-index: -1; inset: 0; background: var(--bg) center / cover no-repeat; }
-    .card::before { animation: breathe 24s ease-in-out infinite alternate; }
-    @keyframes breathe { to { scale: 1.035; } }
     /* one cluster per card, pivoting on its corner; the img inside is what gets mirrored */
     .corner-floral { position: absolute; z-index: 4; left: -7%; bottom: -3%; width: 50%; pointer-events: none; transform-origin: 0 100%; animation: sway 9s ease-in-out infinite alternate; }
     .corner-floral img { display: block; width: 100%; height: auto; }
@@ -69,8 +67,10 @@
     .cover h1 span { display: block; }
     .cover h1 .and { font: 400 calc(var(--u) * 13) / 1 var(--script); letter-spacing: .04em; margin: calc(var(--u) * 7) 0 calc(var(--u) * 5); text-transform: none; color: var(--gold-light); }
     .cover-date { margin-top: calc(var(--u) * 11); font: 400 calc(var(--u) * 4.2) / 1.2 var(--serif); letter-spacing: .04em; color: #f6eedd; text-shadow: 0 2px 12px #050611b3; }
-    .cue { position: absolute; z-index: 3; bottom: calc(var(--u) * 13 + env(safe-area-inset-bottom)); left: 50%; translate: -50%; display: grid; justify-items: center; gap: calc(var(--u) * 1.6); color: #fff0ce; text-shadow: 0 2px 12px #05030a; text-decoration: none; font: 600 calc(var(--u) * 2.5) / 1 var(--sans); letter-spacing: .3em; text-indent: .3em; text-transform: uppercase; padding: calc(var(--u) * 3); }
+    .cue { position: absolute; z-index: 3; bottom: calc(var(--u) * 13 + env(safe-area-inset-bottom)); left: 50%; translate: -50%; display: grid; justify-items: center; gap: calc(var(--u) * 1.6); color: #fff0ce; text-shadow: 0 2px 12px #05030a; text-decoration: none; font: 600 calc(var(--u) * 2.5) / 1 var(--sans); letter-spacing: .3em; text-indent: .3em; text-transform: uppercase; padding: calc(var(--u) * 3); animation: cue-pop .9s cubic-bezier(.2, .8, .2, 1) both, cue-float 3.4s ease-in-out .9s infinite; }
     .cue::after { content: ""; width: calc(var(--u) * 2.2); aspect-ratio: 1; border: solid currentColor; border-width: 0 1px 1px 0; rotate: 45deg; animation: nudge 2.2s ease-in-out infinite; }
+    @keyframes cue-pop { from { opacity: 0; scale: .78; } 65% { opacity: 1; scale: 1.08; } to { opacity: 1; scale: 1; } }
+    @keyframes cue-float { 0%, 100% { translate: -50% 0; } 50% { translate: -50% -5px; } }
     @keyframes nudge { 50% { translate: calc(var(--u) * 1) calc(var(--u) * 1); opacity: .45; } }
 
     .family { --bg: url("assets/cream-mobile-v2.webp"); justify-content: center; padding: calc(var(--u) * 30) calc(var(--u) * 10) calc(var(--u) * 22); color: #493932; background: #f7efe0; font-size: calc(var(--u) * 4); line-height: 1.55; }
@@ -224,7 +224,7 @@
         <h1 id="cover-title"><span>Raghav</span><span class="and">&amp;</span><span>Aastha</span></h1>
         <p class="cover-date" style="--i:2">25, 26 &amp; 27 December 2026</p>
       </div>
-      <a class="cue" href="#invitation">Open</a>
+      <a class="cue" href="#invitation">Scroll</a>
     </section>
 
     <section class="card family" id="invitation" aria-label="Invitation">
