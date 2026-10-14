@@ -61,7 +61,7 @@
     @keyframes sway { from { rotate: -1.1deg; } to { rotate: 1.3deg; } }
     @keyframes sway-right { from { rotate: 1.1deg; } to { rotate: -1.3deg; } }
 
-    .cover { --bg: url("assets/cover-florals.webp"); justify-content: center; align-items: center; color: var(--gold-light); background: #10101d; }
+    .cover { --bg: url("assets/cover-florals.webp"); --p1: #f6dfbd; --p2: #bd6f78; justify-content: center; align-items: center; color: var(--gold-light); background: #10101d; }
     .cover::before { filter: brightness(1.1) saturate(1.12) contrast(1.025); }
     .cover .corner-floral { z-index: 0; bottom: -5%; width: 62%; }
     .cover .reveal { position: relative; z-index: 2; width: 100%; text-align: center; }
@@ -133,7 +133,7 @@
     @keyframes flicker { 0% { opacity: .2; scale: .9; } 45% { opacity: .6; } 60% { opacity: .38; } 100% { opacity: .8; scale: 1.08; } }
 
     .air { position: absolute; z-index: 1; inset: 0; overflow: hidden; pointer-events: none; }
-    .petal { position: absolute; top: -6%; left: var(--x); width: calc(var(--u) * var(--s)); height: calc(var(--u) * var(--s) * 1.4); border-radius: 80% 12% 80% 12%; background: linear-gradient(140deg, var(--p1), var(--p2)); opacity: 0; animation: fall var(--d) linear var(--dl) infinite, drift calc(var(--d) / 4) ease-in-out var(--dl) infinite alternate; }
+    .petal { position: absolute; top: var(--start-y, -6%); left: var(--x); width: calc(var(--u) * var(--s)); height: calc(var(--u) * var(--s) * 1.4); border-radius: 80% 12% 80% 12%; background: linear-gradient(140deg, var(--p1), var(--p2)); opacity: 0; animation: fall var(--d) linear var(--dl) infinite, drift calc(var(--d) / 4) ease-in-out var(--dl) infinite alternate; }
     @keyframes fall { 0% { translate: 0 0; rotate: 0deg; opacity: 0; } 8% { opacity: .85; } 80% { opacity: .7; } 100% { translate: 0 112svh; rotate: var(--rot); opacity: 0; } }
     @keyframes drift { from { transform: translateX(calc(var(--u) * var(--sway) * -1)); } to { transform: translateX(calc(var(--u) * var(--sway))); } }
     .dust { position: absolute; left: var(--x); top: var(--y); width: calc(var(--u) * var(--s)); aspect-ratio: 1; border-radius: 50%; background: var(--dust, #f4d896); box-shadow: 0 0 calc(var(--u) * 1.6) var(--dust, #f4d896); opacity: 0; animation: twinkle var(--d) ease-in-out var(--dl) infinite; }
@@ -218,7 +218,7 @@
   <audio id="music" src="assets/audio/ranjha.mp3" preload="auto" loop></audio>
   <button class="sound" id="soundToggle" type="button" aria-label="Mute music" aria-pressed="false" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z" /><path class="on" d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11" /><path class="off" d="m16 9.5 5 5m0-5-5 5" /></svg></button>
   <main class="story">
-    <section class="card cover" data-dust="16" id="welcome" aria-labelledby="cover-title">
+    <section class="card cover" data-dust="16" data-petals="8" data-petal-origin="corners" id="welcome" aria-labelledby="cover-title">
       <span class="corner-floral" aria-hidden="true"><img src="assets/cover-corner.webp" width="1024" height="1536" alt="" fetchpriority="high" /></span>
       <div class="reveal">
         <h1 id="cover-title"><span>Raghav</span><span class="and">&amp;</span><span>Aastha</span></h1>
@@ -344,8 +344,13 @@
       const air = document.createElement("div");
       air.className = "air";
       air.setAttribute("aria-hidden", "true");
-      const scatter = (cls, n, css) => { for (let k = 0; k < n; k++) air.insertAdjacentHTML("beforeend", `<i class="${cls}" style="${css()}"></i>`); };
-      scatter("petal", +card.dataset.petals || 0, () => `--x:${rnd(3, 95)}%;--s:${rnd(1.7, 3.1)};--d:${rnd(15, 26)}s;--dl:-${rnd(0, 26)}s;--sway:${rnd(3, 8)};--rot:${rnd(-400, 400)}deg`);
+      const scatter = (cls, n, css) => { for (let k = 0; k < n; k++) air.insertAdjacentHTML("beforeend", `<i class="${cls}" style="${css(k)}"></i>`); };
+      scatter("petal", +card.dataset.petals || 0, (k) => {
+        const fromCorners = card.dataset.petalOrigin === "corners";
+        const x = fromCorners ? (k % 2 ? rnd(80, 96) : rnd(4, 20)) : rnd(3, 95);
+        const y = fromCorners ? rnd(-4, 8) : -6;
+        return `--x:${x}%;--start-y:${y}%;--s:${rnd(1.7, 3.1)};--d:${rnd(15, 26)}s;--dl:-${rnd(0, 26)}s;--sway:${rnd(3, 8)};--rot:${rnd(-400, 400)}deg`;
+      });
       scatter("dust", +card.dataset.dust || 0, () => `--x:${rnd(4, 96)}%;--y:${rnd(4, 92)}%;--s:${rnd(.5, 1.1)};--d:${rnd(2.6, 6)}s;--dl:-${rnd(0, 6)}s`);
       card.append(air);
       live.observe(card);
