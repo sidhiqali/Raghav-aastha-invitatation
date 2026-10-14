@@ -64,27 +64,29 @@
     .cover { --bg: url("assets/cover-florals.webp"); justify-content: center; align-items: center; color: var(--gold-light); background: #10101d; }
     .cover::before { filter: brightness(1.1) saturate(1.12) contrast(1.025); }
     .cover .corner-floral { z-index: 0; bottom: -5%; width: 62%; }
-    .cover .reveal { position: relative; z-index: 2; }
+    .cover .reveal { position: relative; z-index: 2; width: 100%; text-align: center; }
     .cover h1 { font: 400 calc(var(--u) * 15.5) / 1 var(--brush); letter-spacing: .16em; margin-right: -.16em; text-transform: uppercase; color: #efd08e; text-shadow: 0 2px 1px #24131caa, 0 8px 24px #050611b3; }
     .cover h1 span { display: block; }
     .cover h1 .and { font: 400 calc(var(--u) * 13) / 1 var(--script); letter-spacing: .04em; margin: calc(var(--u) * 7) 0 calc(var(--u) * 5); text-transform: none; color: var(--gold-light); }
-    .cover-date { margin-top: calc(var(--u) * 11); font: 600 calc(var(--u) * 3.1) / 1 var(--sans); letter-spacing: .34em; margin-right: -.34em; text-transform: uppercase; color: #f6eeddcc; }
+    .cover-date { margin-top: calc(var(--u) * 11); font: 400 calc(var(--u) * 4.2) / 1.2 var(--serif); letter-spacing: .04em; color: #f6eedd; text-shadow: 0 2px 12px #050611b3; }
     .cue { position: absolute; z-index: 3; bottom: calc(var(--u) * 13 + env(safe-area-inset-bottom)); left: 50%; translate: -50%; display: grid; justify-items: center; gap: calc(var(--u) * 1.6); color: #fff0ce; text-shadow: 0 2px 12px #05030a; text-decoration: none; font: 600 calc(var(--u) * 2.5) / 1 var(--sans); letter-spacing: .3em; text-indent: .3em; text-transform: uppercase; padding: calc(var(--u) * 3); }
     .cue::after { content: ""; width: calc(var(--u) * 2.2); aspect-ratio: 1; border: solid currentColor; border-width: 0 1px 1px 0; rotate: 45deg; animation: nudge 2.2s ease-in-out infinite; }
     @keyframes nudge { 50% { translate: calc(var(--u) * 1) calc(var(--u) * 1); opacity: .45; } }
 
-    .family { --bg: url("assets/cream-mobile-v2.webp"); justify-content: center; padding: calc(var(--u) * 36) calc(var(--u) * 16) calc(var(--u) * 26); color: #5b4a41; background: #f7efe0; font-size: calc(var(--u) * 3.75); line-height: 1.6; }
-    .family .label { font: 600 calc(var(--u) * 2.5) / 1.4 var(--sans); letter-spacing: .2em; text-indent: .2em; text-transform: uppercase; color: #a07f45; }
+    .family { --bg: url("assets/cream-mobile-v2.webp"); justify-content: center; padding: calc(var(--u) * 30) calc(var(--u) * 10) calc(var(--u) * 22); color: #493932; background: #f7efe0; font-size: calc(var(--u) * 4); line-height: 1.55; }
+    .family .reveal { position: relative; translate: 0 calc(var(--u) * 3); }
+    .family .family-ornament { position: absolute; left: 50%; bottom: calc(100% + calc(var(--u) * 4)); width: calc(var(--u) * 15); height: calc(var(--u) * 5); margin-left: calc(var(--u) * -7.5); overflow: visible; color: #a98549; }
+    .family .label { font: 600 calc(var(--u) * 2.9) / 1.4 var(--sans); letter-spacing: .18em; text-indent: .18em; text-transform: uppercase; color: #866736; }
     .family p { text-wrap: balance; }
-    .family .elders { margin-top: calc(var(--u) * 3); color: #6d5747; font-size: max(calc(var(--u) * 3.5), 11.5px); line-height: 1.5; }
+    .family .elders { margin-top: calc(var(--u) * 3); color: #554238; font-size: max(calc(var(--u) * 3.7), 12px); line-height: 1.5; }
     .family .elders span { display: block; }
     .family .elders span + span { margin-top: calc(var(--u) * 2.2); }
     .family .hosts { margin-top: calc(var(--u) * 6); }
     .family .hosts b { display: block; margin-bottom: calc(var(--u) * 1); font: 400 calc(var(--u) * 4.6) / 1.3 var(--serif); color: #7c3444; }
     .family .name { display: block; font: 400 calc(var(--u) * 19) / .8 var(--script); color: #7c3444; padding-top: calc(var(--u) * 5); }
-    .family .with { display: block; font: 400 calc(var(--u) * 4.4) / 1 var(--hand); color: #a07f45; margin: calc(var(--u) * 3.5) 0 calc(var(--u) * -1); }
-    .family .parents { font-size: max(calc(var(--u) * 3.4), 11.5px); margin-top: calc(var(--u) * 3); color: #6d5747; }
-    .family .kin { margin-inline: calc(var(--u) * -6); font-size: max(calc(var(--u) * 3.2), 11px); line-height: 1.55; }
+    .family .with { display: block; font: 400 calc(var(--u) * 4.4) / 1 var(--hand); color: #846532; margin: calc(var(--u) * 3.5) 0 calc(var(--u) * -1); }
+    .family .parents { font-size: max(calc(var(--u) * 3.6), 12px); margin-top: calc(var(--u) * 3); color: #554238; }
+    .family .kin { margin-inline: calc(var(--u) * -3); font-size: max(calc(var(--u) * 3.5), 12px); line-height: 1.55; }
     .family .kin .label { margin-bottom: calc(var(--u) * 1.5); }
     .family .sides { display: grid; grid-template-columns: 1fr 1px 1fr; gap: calc(var(--u) * 2.5); align-items: center; margin-top: calc(var(--u) * 4.5); white-space: nowrap; }
     .family .sides p { text-wrap: nowrap; }
@@ -109,8 +111,9 @@
     .couple-right .couple { left: auto; right: calc(var(--u) * -4); }
     @keyframes idle { from { transform: rotate(-.35deg); } to { transform: translateY(-.5%) rotate(.45deg); } }
 
-    .engagement { --bg: url("assets/engagement-florals.webp"); --base: #0e1326; --top: 16.5svh; --ink: #f3ead8; --title: #b9a6d8; --accent: #d7bd8a; --rule: #cdb07a; --shade: #0009; }
-    .wedding { --bg: url("assets/wedding-florals.webp"); --base: #fbf3e8; --top: 7svh; --ink: #3b3838; --title: #3b3838; --accent: #8a2f34; --rule: #b08d57; --shade: #5a2d1a40; }
+    .engagement { --bg: url("assets/engagement-florals.webp"); --base: #0e1326; --top: 20svh; --ink: #f3ead8; --title: #b9a6d8; --accent: #d7bd8a; --rule: #cdb07a; --shade: #0009; }
+    .engagement h2 { font-size: calc(var(--u) * 18.5); }
+    .wedding { --bg: url("assets/wedding-florals.webp"); --base: #fbf3e8; --top: 9svh; --ink: #3b3838; --title: #3b3838; --accent: #8a2f34; --rule: #b08d57; --shade: #5a2d1a40; }
     .wedding::before { transform: scaleX(-1); }
     .wedding .copy { width: 65%; margin-left: 6%; }
     .wedding .copy::before { content: ""; position: absolute; z-index: -1; inset: 0 -22% -8% -12%; background: radial-gradient(closest-side, #fbf3e8 55%, #fbf3e800); }
@@ -120,7 +123,7 @@
     .wedding .couple { height: 47svh; }
     .reception .copy { margin-inline: auto; }
     .engagement .couple, .reception .couple { height: 48svh; }
-    .reception { --bg: url("assets/reception-florals.webp"); --base: #fbf5ea; --top: 15svh; --ink: #454242; --title: #4a4747; --accent: #9a7b45; --rule: #b59a6a; --shade: #5a45203d; }
+    .reception { --bg: url("assets/reception-florals.webp"); --base: #fbf5ea; --top: 20svh; --ink: #454242; --title: #4a4747; --accent: #9a7b45; --rule: #b59a6a; --shade: #5a45203d; }
     .reception::before { filter: sepia(.35) saturate(.8); }
 
     /* .fx matches the 941x1672 artwork box, so glows stay pinned to the painted lanterns */
@@ -147,7 +150,8 @@
     .envelope-gate { --w: min(100vw, 56.25svh); --h: min(100svh, var(--w) * 16 / 9); --band: calc((100svh - var(--h)) / 2); position: fixed; inset: 0; z-index: 20; isolation: isolate; display: grid; place-items: center; overflow: hidden; background: radial-gradient(ellipse at center, #3b1724 0, #1b0a13 68%, #10050a 100%); }
     .envelope-gate::before { content: ""; position: absolute; z-index: -1; width: var(--w); height: var(--h); border-radius: 3px; box-shadow: 0 28px 70px #050207b8, 0 8px 24px #e8bd7430; pointer-events: none; }
     .envelope-button { position: relative; display: grid; place-items: center; width: 100vw; height: 100svh; padding: 0; overflow: hidden; border: 0; background: transparent; cursor: pointer; -webkit-tap-highlight-color: transparent; }
-    .envelope-video { display: block; width: var(--w); height: var(--h); object-fit: contain; filter: brightness(1.14) saturate(1.3) contrast(1.075); animation: env-in 1.3s cubic-bezier(.2, .7, .2, 1) both; }
+    .envelope-media { position: absolute; top: 50%; left: 50%; width: var(--w); height: var(--h); overflow: hidden; transform: translate(-50%, -50%); }
+    .envelope-video { display: block; width: calc(100% + 3px); height: 100%; object-fit: fill; transform: translateX(-3px); filter: brightness(1.14) saturate(1.3) contrast(1.075); animation: env-in 1.3s cubic-bezier(.2, .7, .2, 1) both; }
     @keyframes env-in { from { opacity: 0; scale: .94; } }
     .envelope-button:focus-visible { outline: 2px solid var(--gold-light); outline-offset: -5px; }
 
@@ -171,7 +175,7 @@
     .sound .off, .sound[aria-pressed="true"] .on { display: none; }
     .sound[aria-pressed="true"] .off { display: inline; }
 
-    .envelope-gate.is-opening { opacity: 0; transform: scale(1.018); pointer-events: none; transition: opacity 1.35s cubic-bezier(.4, 0, .2, 1), transform 1.45s cubic-bezier(.22, 1, .36, 1); }
+    .envelope-gate.is-opening { opacity: 0; transform: scale(1.018); pointer-events: none; transition: opacity .9s cubic-bezier(.4, 0, .2, 1), transform 1s cubic-bezier(.22, 1, .36, 1); }
     .cover::before { transition: transform 2.8s cubic-bezier(.2, .7, .2, 1); }
     .invite-closed .cover::before { transform: scale(1.05); }
     .cover .corner-floral { transition: translate 2.2s cubic-bezier(.2, .7, .2, 1) .5s, opacity 1.6s ease .5s; }
@@ -197,7 +201,6 @@
     }
     @media (max-width: 480px) {
       .cover .reveal { width: 100%; padding-inline: 12px; }
-      .cover-date { letter-spacing: .26em; margin-right: -.26em; }
       .cover .corner-floral { width: min(68%, 300px); bottom: -6%; }
       .cue { bottom: calc(14svh + env(safe-area-inset-bottom)); }
     }
@@ -207,25 +210,26 @@
   <noscript><style>body { overflow: auto !important; } .envelope-gate { display: none !important; }</style></noscript>
   <section class="envelope-gate" id="envelopeGate" aria-label="Open the wedding invitation">
     <button class="envelope-button" id="openEnvelope" type="button" aria-label="Play the envelope opening and view the wedding invitation">
-      <video class="envelope-video" id="envelopeVideo" src="assets/envelope/opening.mp4" poster="assets/envelope/poster.jpg" width="1080" height="1920" muted playsinline preload="auto" aria-hidden="true"></video>
+      <span class="envelope-media" aria-hidden="true"><video class="envelope-video" id="envelopeVideo" src="assets/envelope/opening.mp4" poster="assets/envelope/poster.jpg" width="1080" height="1920" muted playsinline preload="auto" aria-hidden="true"></video></span>
       <span class="env-band top" aria-hidden="true"><span class="env-mark"><span class="flourish"></span><i></i><span class="flourish r"></span></span></span>
       <span class="env-band bottom"><span class="envelope-cta">Tap to open</span><span class="env-date" aria-hidden="true">25 · 26 · 27 December 2026</span></span>
     </button>
   </section>
-  <audio id="music" src="assets/audio/ranjha.mp3" preload="auto"></audio>
+  <audio id="music" src="assets/audio/ranjha.mp3" preload="auto" loop></audio>
   <button class="sound" id="soundToggle" type="button" aria-label="Mute music" aria-pressed="false" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z" /><path class="on" d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11" /><path class="off" d="m16 9.5 5 5m0-5-5 5" /></svg></button>
   <main class="story">
     <section class="card cover" data-dust="16" id="welcome" aria-labelledby="cover-title">
       <span class="corner-floral" aria-hidden="true"><img src="assets/cover-corner.webp" width="1024" height="1536" alt="" fetchpriority="high" /></span>
       <div class="reveal">
-        <h1 id="cover-title"><span>Raghav</span><span class="and">and</span><span>Aastha</span></h1>
-        <p class="cover-date" style="--i:2">25 · 26 · 27 December 2026</p>
+        <h1 id="cover-title"><span>Raghav</span><span class="and">&amp;</span><span>Aastha</span></h1>
+        <p class="cover-date" style="--i:2">25, 26 &amp; 27 December 2026</p>
       </div>
       <a class="cue" href="#invitation">Open</a>
     </section>
 
     <section class="card family" id="invitation" aria-label="Invitation">
       <div class="reveal">
+        <svg class="family-ornament" viewBox="0 0 120 40" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 29h29c10 0 17-5 24-16 7 11 14 16 24 16h29"/><path d="M58 9c-4 4-7 8-7 12 0 4 3 7 9 11 6-4 9-7 9-11 0-4-3-8-7-12l-2-2-2 2Z"/><path d="M42 28c5-1 9-4 13-9M78 28c-5-1-9-4-13-9M60 32v4M36 29l-4-4M84 29l4-4"/></svg>
         <p class="label">With the loving blessings of</p>
         <p class="elders" style="--i:1"><span>Late Mrs. Dasrhi Jaggi &amp;<br />Late Prof. (Dr.) OP Jaggi</span><span>Late Rear Adm. KL Malhan &amp;<br />Mrs. Sushma Malhan</span></p>
         <p class="hosts" style="--i:2"><b>Namita &amp; Vikram Jaggi</b>are delighted to invite you to the<br />wedding celebrations of their son</p>
@@ -243,7 +247,7 @@
       </div>
     </section>
 
-    <section class="card event engagement" data-dust="14" data-petals="5" id="engagement" aria-labelledby="engagement-title">
+    <section class="card event engagement" data-dust="14" data-petals="14" id="engagement" aria-labelledby="engagement-title">
       <span class="corner-floral right" aria-hidden="true"><img src="assets/engagement-corner.webp" width="1024" height="1536" alt="" loading="lazy" /></span>
       <div class="fx" aria-hidden="true">
         <i style="--x:50.6%;--y:11.4%;--r:38%;--c:#cfc4ff;--t:6s"></i>
@@ -261,7 +265,7 @@
       <img class="couple reveal-art" src="assets/characters/engagement-chibi.webp" width="1024" height="1536" alt="Chibi illustration of Raghav and Aastha in navy and lavender engagement outfits" loading="lazy" />
     </section>
 
-    <section class="card event wedding couple-right" data-petals="8" id="wedding" aria-labelledby="wedding-title">
+    <section class="card event wedding couple-right" data-petals="11" id="wedding" aria-labelledby="wedding-title">
       <span class="corner-floral" aria-hidden="true"><img src="assets/wedding-corner.webp" width="1024" height="1536" alt="" loading="lazy" /></span>
       <div class="copy reveal">
         <h2 id="wedding-title">Sundowner<br />Wedding</h2>
@@ -273,7 +277,7 @@
       <img class="couple reveal-art" src="assets/characters/wedding-chibi.webp" width="1024" height="1536" alt="Chibi illustration of Raghav and Aastha in cream and red wedding outfits" loading="lazy" />
     </section>
 
-    <section class="card event reception" data-petals="6" data-dust="8" id="reception" aria-labelledby="reception-title">
+    <section class="card event reception" data-petals="9" data-dust="8" id="reception" aria-labelledby="reception-title">
       <span class="corner-floral right" aria-hidden="true"><img src="assets/reception-corner.webp" width="1024" height="1536" alt="" loading="lazy" /></span>
       <div class="copy reveal">
         <h2 id="reception-title">Reception</h2>
@@ -306,10 +310,10 @@
       returnToWelcome();
       envelopeGate.classList.add("is-opening");
       document.body.classList.remove("invite-closed");
-      setTimeout(() => envelopeGate.remove(), calm ? 30 : 1500);
+      setTimeout(() => envelopeGate.remove(), calm ? 30 : 1000);
     };
-    // fade as soon as the flap starts to lift (~3.8s into the video)
-    envelopeVideo.addEventListener("timeupdate", () => { if (envelopeVideo.currentTime >= 3.9) openInvitation(); });
+    // The updated clip reaches the opening action sooner; keep the reveal brisk but let the seal release read clearly.
+    envelopeVideo.addEventListener("timeupdate", () => { if (envelopeVideo.currentTime >= 5) openInvitation(); });
     envelopeVideo.addEventListener("ended", openInvitation);
     envelopeButton.addEventListener("click", async () => {
       if (envelopeButton.disabled) return;
@@ -317,6 +321,7 @@
       envelopeGate.classList.add("is-playing");
       music.play().then(() => { soundToggle.hidden = false; }, () => {});
       if (calm) return openInvitation();
+      envelopeVideo.playbackRate = 1.4;
       try { await envelopeVideo.play(); }
       catch { envelopeGate.classList.remove("is-playing"); envelopeButton.disabled = false; }
     });
@@ -328,8 +333,6 @@
       soundToggle.setAttribute("aria-pressed", music.muted);
       soundToggle.setAttribute("aria-label", music.muted ? "Play music" : "Mute music");
     });
-    music.addEventListener("ended", () => { soundToggle.hidden = true; });
-
     const seen = new IntersectionObserver((entries) => {
       entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("is-visible"); seen.unobserve(e.target); } });
     }, { threshold: 0.2 });
