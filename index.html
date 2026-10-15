@@ -23,7 +23,7 @@
     if ("scrollRestoration" in history) history.scrollRestoration = "manual";
     if (location.hash) history.replaceState(null, "", location.pathname + location.search);
   </script>
-  <link rel="preload" as="image" href="assets/cover-florals.webp" />
+  <link rel="preload" as="image" href="assets/cover-florals-pastel.webp" />
   <link rel="preload" as="image" href="assets/cover-corner.webp" />
   <style>
     @font-face { font-family: "Kaushan Script"; src: url("assets/fonts/kaushan-script.woff2") format("woff2"); font-display: swap; }
@@ -59,16 +59,14 @@
     @keyframes sway { from { rotate: -1.1deg; } to { rotate: 1.3deg; } }
     @keyframes sway-right { from { rotate: 1.1deg; } to { rotate: -1.3deg; } }
 
-    .cover { --bg: url("assets/cover-florals.webp"); --p1: #f6dfbd; --p2: #bd6f78; justify-content: center; align-items: center; color: var(--gold-light); background: #10101d; }
-    .cover::before { filter: brightness(1.1) saturate(1.12) contrast(1.025); }
-    .cover::after { content: ""; position: absolute; z-index: 0; inset: 0; pointer-events: none; background: radial-gradient(ellipse 66% 48% at 50% 49%, #f6ebdcfa 0%, #f6ebdcf2 67%, #f6ebdc00 100%); }
+    .cover { --bg: url("assets/cover-florals-pastel.webp"); --p1: #f6dfbd; --p2: #bd6f78; justify-content: center; align-items: center; color: #742c3f; background: #f2e3de; }
     .cover .corner-floral { z-index: 1; bottom: -5%; width: 62%; }
     .cover .reveal { position: relative; z-index: 2; width: 100%; text-align: center; }
-    .cover h1 { font: 400 calc(var(--u) * 15.5) / 1 var(--brush); letter-spacing: .16em; margin-right: -.16em; text-transform: uppercase; color: #742c3f; text-shadow: 0 2px 2px #f8ead8aa, 0 7px 20px #f8ead877; }
+    .cover h1 { font: 400 calc(var(--u) * 15.5) / 1 var(--brush); letter-spacing: .16em; margin-right: -.16em; text-transform: uppercase; color: #742c3f; }
     .cover h1 span { display: block; }
     .cover h1 .and { font: 400 calc(var(--u) * 13) / 1 var(--script); letter-spacing: .04em; margin: calc(var(--u) * 7) 0 calc(var(--u) * 5); text-transform: none; color: #8a633b; }
-    .cover-date { margin-top: calc(var(--u) * 11); font: 400 calc(var(--u) * 4.2) / 1.2 var(--serif); letter-spacing: .04em; color: #493933; text-shadow: 0 1px 8px #fff7e2aa; }
-    .cue { position: absolute; z-index: 3; bottom: calc(var(--u) * 13 + env(safe-area-inset-bottom)); left: 50%; translate: -50%; display: grid; justify-items: center; gap: calc(var(--u) * 1.6); color: #6d293b; text-shadow: 0 1px 8px #fff3de; text-decoration: none; font: 600 calc(var(--u) * 2.5) / 1 var(--sans); letter-spacing: .3em; text-indent: .3em; text-transform: uppercase; padding: calc(var(--u) * 3); animation: cue-pop .9s cubic-bezier(.2, .8, .2, 1) both, cue-float 3.4s ease-in-out .9s infinite; }
+    .cover-date { margin-top: calc(var(--u) * 11); font: 400 calc(var(--u) * 4.2) / 1.2 var(--serif); letter-spacing: .04em; color: #493933; }
+    .cue { position: absolute; z-index: 3; bottom: calc(var(--u) * 13 + env(safe-area-inset-bottom)); left: 50%; translate: -50%; display: grid; justify-items: center; gap: calc(var(--u) * 1.6); color: #6d293b; text-decoration: none; font: 600 calc(var(--u) * 2.5) / 1 var(--sans); letter-spacing: .3em; text-indent: .3em; text-transform: uppercase; padding: calc(var(--u) * 3); animation: cue-pop .9s cubic-bezier(.2, .8, .2, 1) both, cue-float 3.4s ease-in-out .9s infinite; }
     .cue::after { content: ""; width: calc(var(--u) * 2.2); aspect-ratio: 1; border: solid currentColor; border-width: 0 1px 1px 0; rotate: 45deg; animation: nudge 2.2s ease-in-out infinite; }
     @keyframes cue-pop { from { opacity: 0; scale: .78; } 65% { opacity: 1; scale: 1.08; } to { opacity: 1; scale: 1; } }
     @keyframes cue-float { 0%, 100% { translate: -50% 0; } 50% { translate: -50% -5px; } }
