@@ -61,6 +61,7 @@
 
     .cover { --bg: url("assets/cover-florals-pastel.webp"); --p1: #f6dfbd; --p2: #bd6f78; justify-content: center; align-items: center; color: #742c3f; background: #f2e3de; }
     .cover .corner-floral { z-index: 1; bottom: -5%; width: 62%; }
+    .cover-ornament { position: absolute; z-index: 2; top: 21%; left: 50%; translate: -50% 0; width: min(42%, calc(var(--u) * 42)); height: auto; color: #ad8047; }
     .cover .reveal { position: relative; z-index: 2; width: 100%; text-align: center; }
     .cover h1 { font: 400 calc(var(--u) * 15.5) / 1 var(--brush); letter-spacing: .16em; margin-right: -.16em; text-transform: uppercase; color: #742c3f; }
     .cover h1 span { display: block; }
@@ -219,6 +220,13 @@
   <main class="story">
     <section class="card cover" data-dust="16" data-petals="8" data-petal-origin="corners" id="welcome" aria-labelledby="cover-title">
       <span class="corner-floral" aria-hidden="true"><img src="assets/cover-corner.webp" width="1024" height="1536" alt="" fetchpriority="high" /></span>
+      <svg class="cover-ornament" viewBox="0 0 320 104" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M12 72h83c17 0 24-9 34-17 7-6 15-7 20-2 5 5 1 12-5 12-5 0-8-4-6-8M308 72h-83c-17 0-24-9-34-17-7-6-15-7-20-2-5 5-1 12 5 12 5 0 8-4 6-8" />
+        <path d="M160 73V43m0 4c-4-14-14-22-23-23 0 12 7 22 23 27m0-4c4-14 14-22 23-23 0 12-7 22-23 27m-1-4c-12-8-22-9-29-5 5 10 15 15 30 14m1-9c12-8 22-9 29-5-5 10-15 15-30 14" />
+        <path d="M147 72c4-5 8-7 13-7s9 2 13 7c-3 7-8 11-13 11s-10-4-13-11Z" />
+        <path d="M119 57c-8-1-13-5-15-11 8-1 14 2 18 8m79 3c8-1 13-5 15-11-8-1-14 2-18 8" />
+        <circle cx="160" cy="90" r="2.2" fill="currentColor" stroke="none" />
+      </svg>
       <div class="reveal">
         <h1 id="cover-title"><span>Raghav</span><span class="and">&amp;</span><span>Aastha</span></h1>
         <p class="cover-date" style="--i:2">25, 26 &amp; 27 December 2026</p>
