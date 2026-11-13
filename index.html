@@ -208,6 +208,31 @@
       .cover .corner-floral { width: min(68%, 300px); bottom: -6%; }
       .cue { bottom: calc(14svh + env(safe-area-inset-bottom)); }
     }
+
+    /* Bride-side profile: only loaded when INVITATION_SIDE=bride. */
+    .bride-mode .family { --bg: url("assets/cream-mobile-v2.webp"); padding: calc(var(--u) * 22) calc(var(--u) * 10) calc(var(--u) * 18); }
+    .bride-mode .family .reveal { max-width: calc(var(--u) * 70); margin-inline: auto; }
+    .bride-mode .family .label { max-width: calc(var(--u) * 66); margin-inline: auto; font-size: max(calc(var(--u) * 2.62), 10px); letter-spacing: .145em; text-indent: .145em; }
+    .bride-mode .family .invitation-copy { max-width: calc(var(--u) * 70); margin: calc(var(--u) * 4) auto 0; color: #554238; font-size: max(calc(var(--u) * 3.65), 12px); line-height: 1.46; }
+    .bride-mode .family .name { padding-top: calc(var(--u) * 2); font-size: calc(var(--u) * 18); }
+    .bride-mode .family .lineage { margin-top: calc(var(--u) * 3); color: #554238; font-size: max(calc(var(--u) * 3.45), 11px); line-height: 1.45; }
+    .bride-mode .family .with { margin: calc(var(--u) * 4) 0 calc(var(--u) * 1.5); }
+    .bride-mode .family .bride-joy { margin-top: calc(var(--u) * 5); }
+    .bride-mode .family .joy-names { margin-top: calc(var(--u) * 2); color: #7c3444; font: italic 400 calc(var(--u) * 5.25) / 1.38 var(--serif); }
+    .bride-mode .family .extended { margin-top: calc(var(--u) * 4.5); }
+    .bride-mode .family .extended-copy { margin-top: calc(var(--u) * 1.6); color: #7c3444; font: italic 400 calc(var(--u) * 5.3) / 1.2 var(--serif); }
+    .bride-mode .family .bride-signoff { margin-top: calc(var(--u) * 7); color: #554238; font: italic calc(var(--u) * 4.1) / 1.2 var(--serif); }
+    .shabad { --bg: url("assets/cream-mobile-v2.webp"); --base: #f7efe0; --top: 17svh; --ink: #493932; --title: #7c3444; --accent: #8a633b; --rule: #b8945b; --shade: transparent; }
+    .shabad::before { filter: saturate(.78) brightness(1.02); }
+    .shabad .copy { width: 82%; margin-inline: auto; text-align: center; }
+    .shabad .ikh-onkar { margin: 0 0 calc(var(--u) * 8); color: #8a633b; font: 700 calc(var(--u) * 9) / 1 Georgia, serif; }
+    .shabad .intro { margin: 0; font: italic calc(var(--u) * 5) / 1.48 var(--serif); }
+    .shabad h2 { margin-top: calc(var(--u) * 10); color: #7c3444; font-family: var(--serif); font-size: calc(var(--u) * 8); font-weight: 700; line-height: 1.1; }
+    .shabad .couple-line { margin: calc(var(--u) * 8) 0 0; color: #493932; font: 700 calc(var(--u) * 6.4) / 1.2 var(--serif); }
+    .shabad .schedule { margin-top: calc(var(--u) * 8); font: 400 calc(var(--u) * 4.7) / 1.4 var(--hand); }
+    .shabad .rule { margin-block: calc(var(--u) * 8); }
+    .shabad .date { color: #554238; }
+    .shabad .venue { color: #7c3444; }
   </style>
 </head>
 <body>
@@ -303,6 +328,8 @@
     </section>
   </main>
   <footer class="footer">Raghav &amp; Aastha · December 2026</footer>
+  <script src="profile-config.js"></script>
+  <script src="bride-profile.js"></script>
   <script>
     const envelopeGate = document.getElementById("envelopeGate");
     const envelopeButton = document.getElementById("openEnvelope");

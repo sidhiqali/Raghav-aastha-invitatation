@@ -1,3 +1,4 @@
 .DS_Store
 .vercel/
+dist/
 /index.old.html

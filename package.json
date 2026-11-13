@@ -1,0 +1,7 @@
+{
+  "name": "raghav-aastha-invitation",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build.mjs"
+  }
+}
