@@ -11,6 +11,9 @@ const host = side === "bride"
 const names = side === "bride" ? "Aastha &amp; Raghav" : "Raghav &amp; Aastha";
 const spokenNames = side === "bride" ? "Aastha and Raghav" : "Raghav and Aastha";
 const shareImage = side === "bride" ? "share-preview-bride.png" : "share-preview.png";
+const celebrationDates = side === "bride"
+  ? "December 19, 25 and 26, 2026"
+  : "December 25–27, 2026";
 
 function buildHtml() {
   let html = readFileSync(resolve(root, "index.html"), "utf8");
@@ -19,6 +22,7 @@ function buildHtml() {
     .replaceAll("Raghav &amp; Aastha", names)
     .replaceAll("Raghav and Aastha", spokenNames)
     .replaceAll("Raghav and Aastha in their wedding attire", `${spokenNames} in their wedding attire`)
+    .replaceAll("December 25–27, 2026", celebrationDates)
     .replaceAll("share-preview.png", shareImage);
   return html;
 }

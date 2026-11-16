@@ -6,7 +6,7 @@
   document.documentElement.classList.add("bride-mode");
   document.title = "Aastha & Raghav — Wedding Celebrations";
 
-  const description = "Join Aastha and Raghav for their wedding celebrations, December 19 and 25–27, 2026.";
+  const description = "Join Aastha and Raghav for their wedding celebrations, December 19, 25 and 26, 2026.";
   document.querySelector('meta[name="description"]')?.setAttribute("content", description);
   document.querySelector('meta[property="og:description"]')?.setAttribute("content", description);
   document.querySelector('meta[name="twitter:description"]')?.setAttribute("content", description);
@@ -15,6 +15,10 @@
   if (coverTitle) {
     coverTitle.innerHTML = '<span>Aastha</span><span class="and">&amp;</span><span>Raghav</span>';
   }
+  const coverDate = document.querySelector(".cover-date");
+  if (coverDate) coverDate.textContent = "19, 25 & 26 December 2026";
+  const envelopeDate = document.querySelector(".env-date");
+  if (envelopeDate) envelopeDate.textContent = "19 · 25 · 26 December 2026";
 
   const family = document.querySelector(".family");
   const invitation = family?.querySelector(".reveal");
@@ -56,5 +60,13 @@
       <p class="venue" style="--i:3">Shri Guru Singh Sabha Gurudwara<br />Sector 18, Noida – 201301</p>
     </div>`;
   document.getElementById("engagement")?.before(shabad);
+  const engagement = document.getElementById("engagement");
+  if (engagement) {
+    const schedule = engagement.querySelectorAll(".schedule li");
+    if (schedule[0]) schedule[0].textContent = "Shagan & Ring Ceremony – 5 PM onwards";
+    const venue = engagement.querySelector(".venue");
+    if (venue) venue.innerHTML = "Aquaden Lawn - Oodles<br />Chattarpur, New Delhi";
+  }
+  document.getElementById("reception")?.remove();
   document.querySelector(".footer").textContent = "Aastha & Raghav · December 2026";
 })();
